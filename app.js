@@ -7,6 +7,7 @@ var logger = require('morgan');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var akun = require('./routes/akun');
+var admin = require('./routes/admin');
 var paket = require('./routes/pesanan_paket');
 var bayar = require('./routes/bayar');
 
@@ -27,6 +28,8 @@ app.use('/beranda', index);
 app.use('/users', users);
 app.use('/akun', akun);
 app.use('/akun/{id}', akun);
+app.use('/admin', admin);
+app.use('/admin/{id}', admin);
 app.use('/paket', paket);
 app.use('/paket/{id}', paket);
 app.use('/bayar', bayar);
