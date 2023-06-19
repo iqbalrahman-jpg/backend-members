@@ -9,6 +9,7 @@ var users = require('./routes/users');
 var akun = require('./routes/akun');
 var admin = require('./routes/admin');
 var paket = require('./routes/pesanan_paket');
+var rental = require('./routes/pesanan_rental');
 var bayar = require('./routes/bayar');
 
 var app = express();
@@ -32,6 +33,8 @@ app.use('/admin', admin);
 app.use('/admin/{id}', admin);
 app.use('/paket', paket);
 app.use('/paket/{id}', paket);
+app.use('/rental', rental);
+app.use('/rental/{id}', rental);
 app.use('/bayar', bayar);
 app.use('/bayar/{id}', bayar);
 
