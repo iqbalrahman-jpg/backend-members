@@ -38,7 +38,7 @@ app.use('/rental', rental);
 app.use('/rental/{id}', rental);
 app.use('/bayar', bayar);
 app.use('/bayar/{id}', bayar);
-app.use('/rental-bayar/{id}', bayar_rental);
+app.use('/rentalbayar/{id}', bayar_rental);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
