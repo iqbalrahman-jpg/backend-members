@@ -14,4 +14,17 @@ router.get('/:id', (req, res) => {
   });
 });
 
+router.patch('/:id', (req, res) => {
+  const { status } = req.body;
+  const { id } = req.params;
+  const query = 'UPDATE pesanan_rental SET `status` = ? WHERE id = ?';
+  connection.query(query, [status, id], (err, results) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      return;
+    }
+    res.json(results);
+  });
+});
+
 module.exports = router;
