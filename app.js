@@ -11,6 +11,7 @@ var admin = require('./routes/admin');
 var paket = require('./routes/pesanan_paket');
 var rental = require('./routes/pesanan_rental');
 var bayar = require('./routes/bayar');
+var bayar_rental = require('./routes/rental');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use('/rental', rental);
 app.use('/rental/{id}', rental);
 app.use('/bayar', bayar);
 app.use('/bayar/{id}', bayar);
+app.use('/rental-bayar/{id}', bayar_rental);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
