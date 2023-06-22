@@ -27,10 +27,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { id_akun, id_rental, customer, telp, alamat, tujuan, unit, lama, tanggal, tanggal_pesan, harga, proses } = req.body;
+  const { id_akun, id_rental, customer, telp, alamat, tujuan, unit, lama, tanggal, tanggal_pesan, harga } = req.body;
 
-  const query = 'INSERT INTO pesanan_rental (`id_akun`, `id_rental`, `customer`, `telp`, `alamat`, `tujuan`, `unit`, `lama`, `tanggal`, `tanggal_pesan`, `harga`, `proses`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-  connection.query(query, [id_akun, id_rental, customer, telp, alamat, tujuan, unit, lama, tanggal, tanggal_pesan, harga, proses],(err, results) => {
+  const query = 'INSERT INTO pesanan_rental (`id_akun`, `id_rental`, `customer`, `telp`, `alamat`, `tujuan`, `unit`, `lama`, `tanggal`, `tanggal_pesan`, `harga`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  connection.query(query, [id_akun, id_rental, customer, telp, alamat, tujuan, unit, lama, tanggal, tanggal_pesan, harga],(err, results) => {
     if (err) {
       console.error('Error executing query:', err);
       return;
